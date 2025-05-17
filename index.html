@@ -2,20 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css">
     <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <input type="text" id="input-el">
-    <button id="input-btn">SAVE INPUT</button>
-    <button id="tap-btn">SAVE TAP</button>
-    <button id="delete-btn">DELETE ALL</button>
-    <ul id="ul-el"> 
 
-    </ul>
-    <script src="./index.js"></script>
+    <div class="content">
+        <h1>people entered: </h1>
+    <h2 id="count-el">0</h2>
+    <div class="btn-container">
+        <button id="increment-btn" onclick="increment()">INCREMENT</button> 
+    <button id="save-btn" onclick="save()">SAVE</button>  
+    </div>
 
-    <a href=""></a>
+    <p id="save-el">previous entries:</p>
+    </div>
+
+    
+    <script src="js/index.js"></script>
     
 </body>
 </html>

@@ -1,55 +1,72 @@
 body{
-    min-width: 400px;
-    margin: 0;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-input{
-    display: flex;
-    padding: 10px;
-    border: 1px solid #5f9341;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-
-input:focus{
-    border-color: green;
+    background-image: url("../images/WhatsApp Image 2025-05-17 at 3.47.56 PM.JPEG");
+    background-size: cover;
+    background-position-y: center;
+    font-weight: bold;
+    text-align: center;
     
+}
+
+.content{
+    margin-top: 300px;
+
+}
+
+h1{
+    align-items: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+h2{
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
 }
 
 
 button{
-    cursor: pointer;
-    background-color:  #5f9341;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
     color: white;
-    border: 1px solid #5f9341;
-    padding: 10px 20px;
-    margin-top: 5px;
     font-weight: bold;
+    width: 200px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#increment-btn{
+    background-color: darkred;
+}
+
+#save-btn{
+    background-color: green;
 }
 
 
 
-#delete-btn{
-    background-color: white;
-    color:  #5f9341 ;
+#increment-btn:hover{
+    background-color: rgb(213, 88, 88);
+    color: black;
 }
 
-
-
-
-ul{
-    margin-top: 20px;
-    list-style: none;
-    padding-left: 0;
+#save-btn:hover{
+    background-color: rgb(79, 157, 84);
+    color: black;
 }
 
-li{
-    margin-top: 5px;
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-li a{
-    color: #5f9341;
+p{
+    color: white;
+    font-size: 20px;
 }
