@@ -1,72 +1,38 @@
 body{
-    background-image: url("../images/WhatsApp Image 2025-05-17 at 3.47.56 PM.JPEG");
-    background-size: cover;
-    background-position-y: center;
-    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: green;
     text-align: center;
-    
-}
-
-.content{
-    margin-top: 300px;
+    color: white;
+    font-weight: bold;
 
 }
 
 h1{
-    align-items: center;
-    margin-bottom: 10px;
-    color: white;
+    color: goldenrod;
 }
 
-h2{
-    font-size: 50px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: white;
+#message-el{
+    font-style: italic;
 }
-
-
-button{
-    border: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: white;
-    font-weight: bold;
-    width: 200px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-#increment-btn{
-    background-color: darkred;
-}
-
-#save-btn{
-    background-color: green;
-}
-
-
-
-#increment-btn:hover{
-    background-color: rgb(213, 88, 88);
-    color: black;
-}
-
-#save-btn:hover{
-    background-color: rgb(79, 157, 84);
-    color: black;
-}
-
 .btn-container{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+button{
+    color: #016f32;
+    width: 150px;
+    background-color: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
 
-p{
-    color: white;
-    font-size: 20px;
+button:hover{
+    background-color: yellow;
 }
