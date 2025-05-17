@@ -1,65 +1,48 @@
-let cards = []
-let sum = 0
-let hasBlackJack = false
-let isAlive = false
-let message = ""
-let messageEl = document.getElementById("message-el")
-let sumEl = document.querySelector("#sum-el")
-let cardsEl = document.querySelector("#cards-el")
+let myLead = []
+const inputEl = document.getElementById("input-el")
+const inputButton = document.getElementById("input-btn")
+const tapButton = document.getElementById("tap-btn")
+const ulEl = document.getElementById("ul-el")
+const deleteBtn = document.getElementById("delete-btn")
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
-let player = {
-    name : "Per" ,
-    chips : 145
-}
-let playerEl = document.querySelector("#player-el")
-playerEl.textContent = player.name + ": $"+player.chips
-
-function startGame(){
-    let firstCard = getRandomCard()
-    let secondCard = getRandomCard()
-    cards = [firstCard , secondCard]
-    sum = firstCard +  secondCard
-    isAlive = true
-    renderGame()
-} 
-function getRandomCard(){
-    let randomNum = Math.floor( Math.random() * 13) + 1
-    if (randomNum > 10){
-        return 10
-    }else if ( randomNum === 1 ){
-        return 11
-    }else {
-        return randomNum
-    }
-
-}
-function renderGame(){
-    cardsEl.textContent = "Cards: "
-    for(let i = 0; i <cards.length ; i++){
-        cardsEl.textContent += cards[i] + " "
-    }
-    sumEl.textContent = "Sum: "+ sum
-    if (sum <= 20){
-        message = "Do you want to draw a new card?"
-    }else if (sum === 21){
-        message = "You've got BlackJack!"
-        hasBlackJack = true
-    }else {
-        message = "You're out of the game!"  
-        isAlive = false
-    }
-    messageEl.textContent = message
+if (leadsFromLocalStorage) {
+    myLead = leadsFromLocalStorage
+    render(myLead)
 }
 
+tapButton.addEventListener("click", function () {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        myLead.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLead))
+        render(myLead)
+    })
+})
 
-function newCard(){
-
-    if (isAlive == true && hasBlackJack == false){
-        let card = getRandomCard()
-        cards.push(card)
-        sum += card
-        renderGame()   
+function render(leads) {
+    let listItems = ""
+    for (let i = 0; i < leads.length; i++) {
+        listItems += `
+            <li>
+                <a target='_blank' href='${leads[i]}'>
+                    ${leads[i]}
+                </a>
+            </li>
+        `
     }
-
-    
+    ulEl.innerHTML = listItems
 }
+
+deleteBtn.addEventListener("dblclick", function () {
+    localStorage.clear()
+    myLead = []
+    render(myLead)
+})
+
+inputButton.addEventListener("click", function () {
+    myLead.push(inputEl.value)
+    inputEl.value = ""
+    localStorage.setItem("myLeads", JSON.stringify(myLead))
+    render(myLead)
+})
+

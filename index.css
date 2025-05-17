@@ -1,38 +1,55 @@
 body{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: green;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-
+    min-width: 400px;
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
-    color: goldenrod;
-}
-
-#message-el{
-    font-style: italic;
-}
-.btn-container{
+input{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-button{
-    color: #016f32;
-    width: 150px;
-    background-color: goldenrod;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-weight: bold;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    padding: 10px;
+    border: 1px solid #5f9341;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-button:hover{
-    background-color: yellow;
+
+input:focus{
+    border-color: green;
+    
+}
+
+
+button{
+    cursor: pointer;
+    background-color:  #5f9341;
+    color: white;
+    border: 1px solid #5f9341;
+    padding: 10px 20px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+
+#delete-btn{
+    background-color: white;
+    color:  #5f9341 ;
+}
+
+
+
+
+ul{
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+li{
+    margin-top: 5px;
+}
+
+li a{
+    color: #5f9341;
 }
